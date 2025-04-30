@@ -23,12 +23,17 @@ import {
   ArrowRightAlt as ArrowIcon
 } from '@mui/icons-material';
 
+import {
+  DirectionsRun as HorseIcon,
+  DirectionsBoat as BoatIcon,
+  Pets as DragonIcon,
+} from '@mui/icons-material';
 
 const transportIcons = {
-  plane: <FlightIcon fontSize="small" />,
+  horse: <HorseIcon fontSize="small" />,
   train: <TrainIcon fontSize="small" />,
-  bus: <BusIcon fontSize="small" />,
-  car: <CarIcon fontSize="small" />,
+  dragon: <DragonIcon fontSize="small" />,
+  boat: <BoatIcon fontSize="small" />,
 };
 
 const cardStyles = {
@@ -97,7 +102,7 @@ const CardsList = ({ routes }) => {
               />
               <Chip
                 icon={<MoneyIcon />}
-                label={`${route.total_cost} руб`}
+                label={`${route.total_cost} монет`}
                 color="success"
                 variant="outlined"
               />
@@ -146,7 +151,7 @@ const CardsList = ({ routes }) => {
                                 {formatTime(segment.time)}
                               </Typography>
                               <Typography variant="caption" component="span">
-                                • {segment.cost} руб •
+                                • {segment.cost} монет •
                               </Typography>
                               <Typography variant="caption" component="span">
                                 Комфорт: {segment.comfort}/100

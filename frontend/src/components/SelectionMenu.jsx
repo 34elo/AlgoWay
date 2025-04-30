@@ -196,7 +196,7 @@ export default function SelectionMenu() {
                         onChange={handleFilterChange('maxPrice')}
                         fullWidth
                         InputProps={{
-                            endAdornment: <InputAdornment position="end">₽</InputAdornment>,
+                            endAdornment: <InputAdornment position="end"></InputAdornment>,
                         }}
                     />
                     <TextField
@@ -222,6 +222,7 @@ export default function SelectionMenu() {
                 >
                     {loading ? 'Поиск...' : 'Найти маршруты'}
                 </Button>
+                <Button small onClick={() => setRoutes([])}>Сброс</Button>
             </Box>
 
             {routes.length > 0 && (
