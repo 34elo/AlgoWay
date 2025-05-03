@@ -82,7 +82,6 @@ export default function SelectionMenu() {
             to_city: selectedCities.to
         };
 
-        // Добавляем фильтры, если они указаны
         if (filters.maxPrice) params.max_price = filters.maxPrice;
         if (filters.minComfort) params.min_comfort = filters.minComfort;
 

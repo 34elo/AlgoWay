@@ -1,4 +1,3 @@
-
 import heapq
 import asyncio
 from collections import defaultdict
@@ -160,14 +159,15 @@ def _sync_find_routes(start_city: str, end_city: str, criterion: str,
 
     return found_routes[:top_n]
 
+
 async def find_routes_async(
-    start_city: str,
-    end_city: str,
-    criterion: str,
-    top_n: int = 5,
-    max_cost: Optional[float] = None,
-    min_comfort: Optional[float] = None,
-    max_transfers: Optional[int] = None
+        start_city: str,
+        end_city: str,
+        criterion: str,
+        top_n: int = 5,
+        max_cost: Optional[float] = None,
+        min_comfort: Optional[float] = None,
+        max_transfers: Optional[int] = None
 ) -> List[Dict]:
     loop = asyncio.get_running_loop()
     with ThreadPoolExecutor() as pool:

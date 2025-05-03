@@ -3,8 +3,8 @@ from typing import Optional
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
-from backend.app.functions.cities.cities import get_cities
-from backend.app.functions.routes.routes import find_routes_async, initialize
+from backend.app.functions.cities import get_cities
+from backend.app.functions.routes import find_routes_async, initialize
 
 app = FastAPI(root_path='/api')
 
@@ -86,6 +86,7 @@ async def routes_fastest(
         return routes
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
+
 
 @app.get('/cities')
 def cities_get():
