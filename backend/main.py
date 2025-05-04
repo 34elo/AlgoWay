@@ -90,4 +90,8 @@ async def routes_fastest(
 
 @app.get('/cities')
 def cities_get():
-    return get_cities()
+    try:
+        cities = get_cities()
+        return cities
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=str(e))
